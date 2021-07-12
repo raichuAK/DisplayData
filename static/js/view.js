@@ -118,8 +118,8 @@ async function createTree() {
     nodeEnter
       .append('text')
       .attr('dy', '.35em')
-      .attr('x', 30)
-      .attr('y', 10)
+      .attr('x', -15)
+      .attr('y', 5)
       .attr('text-anchor', d => (d.children || d._children ? 'end' : 'start'))
       .text(d => d.data.name)
       .style('fill', () => '#000000');
