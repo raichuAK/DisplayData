@@ -203,3 +203,5 @@ async function createTree() {
 }
 
 createTree();
+
+export default createTree;

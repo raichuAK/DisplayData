@@ -6,7 +6,8 @@
   "type": "module",
   "scripts": {
     "serve": "node ./routes/index.js",
-    "test": "jest",
+    "test": "node --experimental-vm-modules node_modules/.bin/jest",
+    "test:api": "npm-run-all api test",
     "coverage": "jest --coverage",
     "lint:eslint": "eslint --ext .js . --ignore-path .gitignore",
     "format:eslint": "eslint --ext .js . --fix --ignore-path .gitignore",
@@ -97,6 +98,8 @@
     "eslint-plugin-jsx-a11y": "^6.4.1",
     "eslint-plugin-react": "^7.24.0",
     "jest": "^27.0.6",
-    "koa-proxies": "^0.12.1"
+    "jsdom": "^16.6.0",
+    "koa-proxies": "^0.12.1",
+    "supertest": "^6.1.3"
   }
 }

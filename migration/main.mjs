@@ -30,7 +30,7 @@ class MigrationManager {
       await dbConn.execute(createSchema); // default schema will be username. In this case postgres
 
       statement = await dbConn.prepare(
-        'insert into TreeData(name, parent, description) values ($1, $2, $3)',
+        'insert into TreeData(name, parent, description) values ($1, $2, $3) ON CONFLICT ON CONSTRAINT treedata_pk DO NOTHING',
         {
           paramTypes: [DataTypeOIDs.Varchar, DataTypeOIDs.Varchar, DataTypeOIDs.Varchar],
         },
@@ -60,19 +60,19 @@ class MigrationManager {
   async performMigration() {
     console.log('Migration started');
     console.time('Migration');
-    const mm = new MigrationManager();
     console.time('Read');
-    await mm.read();
+    await this.read();
     console.timeLog('Read');
     console.time('Parse');
-    await mm.parse();
-    console.timeLog('Parse', `${mm.parsedData.length}`);
+    await this.parse();
+    console.timeLog('Parse', `${this.parsedData.length}`);
     console.time('transform');
-    await mm.transform();
-    console.timeLog('transform', `${mm.transformedData.length}`);
-    await mm.write();
+    await this.transform();
+    console.timeLog('transform', `${this.transformedData.length}`);
+    await this.write();
     console.timeEnd('Migration');
     console.log('Migration Ended');
+    return this.transformedData;
   }
 }
 

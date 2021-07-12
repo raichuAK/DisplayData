@@ -1,7 +1,7 @@
 import myPopUptemplate from './my-pop-up-template.mjs';
 import { createTemplate } from '../lib/templatefactory.mjs';
 
-class MyPopUp extends HTMLElement {
+export default class MyPopUp extends HTMLElement {
   static get observedAttributes() {
     return ['open', '_nodeDescription', '_nameOfNode'];
   }

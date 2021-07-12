@@ -88,3 +88,9 @@ http://localhost:8000/api/parent/
  - Get item details i.e. Name, desciption & parent with parentId [http://localhost:8000/api/parent/:parentId]
  - Get all data http://localhost:8000/api/parent/all
    **( Given sample data size it was redundant to use server side pagination ( Although API end points exist to do it )**
+
+### Run test tool
+**Database should be up & running**
+```npm
+npm run test
+```
