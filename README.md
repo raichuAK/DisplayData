@@ -80,7 +80,7 @@ npm run web
 
 #### Optional debug steps
 You can check API connection at 
-http://localhost:8000/api/parent/
+http://localhost:3000/api/parent/
 
 **API Specification**
 > GET http://localhost:3000/api/parent/
