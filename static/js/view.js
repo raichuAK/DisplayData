@@ -1,5 +1,5 @@
 import * as d3 from 'd3';
-import convertToTree from '../../lib/convertor.js';
+import convertToTree from '../../lib/convertor.mjs';
 
 async function getTreeData(parentId) {
   const response = await fetch(`http://localhost:3000/api/parent/${parentId}`);

@@ -1,4 +1,4 @@
-import Database from '../../lib/utlity.js';
+import Database from '../../lib/utlity.mjs';
 
 class APIservice {
   async getConnection() {

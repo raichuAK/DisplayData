@@ -1,7 +1,7 @@
 import { DataTypeOIDs } from 'postgresql-client';
-import Database from '../lib/utlity.js';
-import migrationData from './data.js';
-import createSchema from './schema.js';
+import Database from '../lib/utlity.mjs';
+import migrationData from './data.mjs';
+import createSchema from './schema.mjs';
 
 class MigrationManager {
   constructor() {
@@ -76,4 +76,4 @@ class MigrationManager {
   }
 }
 
-new MigrationManager().performMigration();
+export default MigrationManager;

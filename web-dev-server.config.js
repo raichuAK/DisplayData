@@ -1,5 +1,5 @@
 import proxy from 'koa-proxies';
-import './routes/index.js';
+import './routes/index.mjs';
 
 export default {
   port: 8000,

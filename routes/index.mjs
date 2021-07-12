@@ -1,7 +1,7 @@
 import express from 'express';
 
-import webRouter from './web.js';
-import apiRouter from './api.js';
+import webRouter from './web.mjs';
+import apiRouter from './api.mjs';
 
 // const express = require('express');
 

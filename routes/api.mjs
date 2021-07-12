@@ -1,5 +1,5 @@
 import express from 'express';
-import APIService from './db-layer/db.js';
+import APIService from './db-layer/db.mjs';
 
 const apiRouter = express.Router();
 
