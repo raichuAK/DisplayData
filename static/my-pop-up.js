@@ -53,7 +53,7 @@ class MyPopUp extends HTMLElement {
   }
 
   set nameOfNode(nodeValue) {
-    if (this._nameOfNode != nodeValue) {
+    if (this._nameOfNode !== nodeValue) {
       this.querySelector('#title').innerText = nodeValue;
       this._nameOfNode = nodeValue;
     }
@@ -64,7 +64,7 @@ class MyPopUp extends HTMLElement {
   }
 
   set nodeDescription(desc) {
-    if (this._nodeDescription != desc) {
+    if (this._nodeDescription !== desc) {
       this.querySelector('#description').innerText = desc;
       this._nodeDescription = desc;
     }

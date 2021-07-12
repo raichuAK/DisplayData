@@ -1,4 +1,5 @@
-export default function(nodeName, nodeDescription) { return `<template id="dialog-template">
+export default function popUptemplate() {
+  return `<template id="dialog-template">
   <style>
     .wrapper {
       opacity: 0;

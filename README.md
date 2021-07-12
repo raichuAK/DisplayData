@@ -40,8 +40,8 @@ OR
 kill -9 $(lsof -t -i:3000)
 ```
 
-```bash
 Kill process at 8000
+```bash
 fuser -k 8000/tcp
 ```
 OR

@@ -1,5 +1,5 @@
 import * as d3 from 'd3';
-import { convertToTree } from '../../lib/convertor.js';
+import convertToTree from '../../lib/convertor.js';
 
 async function getTreeData(parentId) {
   const response = await fetch(`http://localhost:3000/api/parent/${parentId}`);
@@ -7,11 +7,11 @@ async function getTreeData(parentId) {
   return jsonResp;
 }
 
-async function createTree(parentId) {
+async function createTree() {
   let path;
   const apiData = await getTreeData('all');
-  const hierarchyData =  await convertToTree(apiData);
-  
+  const hierarchyData = await convertToTree(apiData);
+
   // Set the dimensions and margins of the diagram
   const margin = {
     top: 200,
@@ -134,10 +134,7 @@ async function createTree(parentId) {
       .attr('transform', d => `translate(${d.y},${d.x})`);
 
     // Update the node attributes and style
-    nodeUpdate
-      .select('rect.node')
-      .style('stroke', '#000000')
-      .attr('cursor', 'pointer');
+    nodeUpdate.select('rect.node').style('stroke', '#000000').attr('cursor', 'pointer');
 
     // Remove any exiting nodes
     const nodeExit = node
@@ -148,11 +145,7 @@ async function createTree(parentId) {
       .remove();
 
     // On exit reduce the node circles size to 0
-    nodeExit.select('rect')
-      .attr('x', -10)
-      .attr('y', -7)
-      .attr('width', 20)
-      .attr('height', 20);
+    nodeExit.select('rect').attr('x', -10).attr('y', -7).attr('width', 20).attr('height', 20);
 
     // ****************** links section ***************************
 

@@ -21,12 +21,12 @@ class APIservice {
       dbConnection = await this.getConnection();
       await dbConnection.connect();
       let resultSet;
-      if(parentId === 'all') {
+      if (parentId === 'all') {
         resultSet = await dbConnection.query(
-          'SELECT td.name, td.description, td.parent  FROM public.TreeData td'
+          'SELECT td.name, td.description, td.parent  FROM public.TreeData td',
         );
       } else {
-         resultSet = await dbConnection.query(
+        resultSet = await dbConnection.query(
           'SELECT td.name, td.description, td.parent  FROM public.TreeData td WHERE td.parent = $1',
           { params: [parentId] },
         );
