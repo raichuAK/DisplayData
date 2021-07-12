@@ -31,5 +31,3 @@ describe('API testing', () => {
     expect(child.length).toBe(2);
   });
 });
-
-

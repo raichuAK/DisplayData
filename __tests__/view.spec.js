@@ -10,7 +10,6 @@ describe('View is rendered', () => {
   });
 });
 
-
 describe('Tree is rendered', () => {
   test('Load tree', async () => {
     expect(createTree).toBeDefined();
