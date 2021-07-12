@@ -85,7 +85,7 @@ http://localhost:8000/api/parent/
 **API Specification**
 > GET http://localhost:8000/api/parent/
  - Default response with parent node
- - Get item details i.e. Name, desciption & parent with parentId [http://localhost:8000/api/parent/:parentId]
+ - Get item details i.e. Name, desciption & parent with parentId http://localhost:8000/api/parent/:parentId
  - Get all data http://localhost:8000/api/parent/all
    **( Given sample data size it was redundant to use server side pagination ( Although API end points exist to do it )**
 
